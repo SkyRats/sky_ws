@@ -1,0 +1,15 @@
+[submodule "sky_vision"]
+	path = sky_vision
+	url = git@github.com:SkyRats/sky_vision.git
+[submodule "sky_mission"]
+	path = sky_mission
+	url = git@github.com:SkyRats/sky_mission.git
+[submodule "CustomFirmware"]
+	path = CustomFirmware
+	url = git@github.com:SkyRats/CustomFirmware.git
+[submodule "sky_base"]
+	path = sky_base
+	url = git@github.com:SkyRats/sky_base.git
+[submodule "src/sky_sim"]
+	path = src/sky_sim
+	url = git@github.com:SkyRats/sky_sim.git
