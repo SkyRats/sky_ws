@@ -44,25 +44,20 @@ echo "source /usr/share/gazebo/setup.sh" >> ~/.bashrc
 
 ## 4. Install Ardupilot Gazebo plugin
 
-First, head to the sky_base repository, and create the required folders for the install.
+First, head to the the ardupilot_gazebo submodule, inside of the sky_base repository.
+```
+cd sky_ws/src/sky_base/gz_ws/src/ardupilot_gazebo
+```
+Then, build the plugin
 
 ```
-cd sky_ws/src/sky_base
-mkdir -p gz_ws/src
-```
-Then, clone the plugin's repository in the folder you created, and build it.
-
-
-```
-cd gz_ws/src
-git clone https://github.com/khancyr/ardupilot_gazebo
-cd ardupilot_gazebo
 mkdir build
 cd build
 cmake ..
 make -j4
 sudo make install
 ```
+
 If you want to see the complete guide: https://ardupilot.org/dev/docs/sitl-with-gazebo-legacy.html#sitl-with-gazebo-legacy
 
 ## 5. Setup Catkin Workspace
@@ -79,6 +74,7 @@ Then, initialize the catkin workspace:
 
 ```
 cd ~/sky_ws
+mkdir build devel log
 catkin init
 ```
 
@@ -148,3 +144,22 @@ roslaunch sky_sim runway.launch
 In addition, you can open QGround to test your flight simulation and RViz to visualize the camera image stream.
 
 ![Flight Test Demo](./docs/images/demo.png)
+
+# Working with Submodules
+
+Submodules are, simply put, repositories within repositories. In order to work with them, say, to commit, push, pull, etc. you can't just commit to the sky_ws repository, as all the changes you've made to the submodules won't be commited - instead, you have to either commit each submodule individually, or use the following command to do all the submodules at once.
+
+```
+git submodule foreach <your-desired-git-command>
+```
+
+then, do the same command to the sky_ws repository, as you would've normally.
+
+
+## If you cloned this repository without the recursive flag
+
+Just run the following commands to initialize the submodules
+
+```
+git submodule update --init --recursive
+```
