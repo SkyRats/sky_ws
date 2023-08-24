@@ -1,12 +1,3 @@
-[submodule "sky_vision"]
-	path = src/sky_vision
-	url = git@github.com:SkyRats/sky_vision.git
-[submodule "sky_mission"]
-	path = src/sky_mission
-	url = git@github.com:SkyRats/sky_mission.git
-[submodule "sky_base"]
-	path = src/sky_base
-	url = git@github.com:SkyRats/sky_base.git
 [submodule "src/sky_sim"]
 	path = src/sky_sim
 	url = git@github.com:SkyRats/sky_sim.git
