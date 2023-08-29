@@ -14,7 +14,15 @@ Head to the Ardupilot fork submodule and install the required dependencies.
 cd sky_ws/src/sky_base/ardupilot/
 Tools/environment_install/install-prereqs-ubuntu.sh -y
 . ~/.profile
+sudo pip3 install mavproxy
 ``` 
+Then, set the ardupilot path on your .bashrc
+```
+echo "export PATH=$PATH:$HOME/sky_ws/src/sky_base/ardupilot/Tools/autotest" >> ~/.bashrc
+echo "export PATH=/usr/lib/ccache:$PATH" >> ~/.bashrc
+source ~/.bashrc
+```
+
 Now that Ardupilot is installed, let's install ROS Noetic
 
 ## 2. ROS Noetic
@@ -22,7 +30,7 @@ Follow the instructions here: http://wiki.ros.org/noetic/Installation/Ubuntu
 
 Remember to add the source command to your bashrc file:
 ```
-echo "source /usr/share/gazebo/setup.sh" >> ~/.bashrc
+echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 
@@ -82,6 +90,11 @@ catkin init
 Install `mavros` and `mavlink` from source:
 ```
 cd ~/sky_ws
+
+wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh
+chmod a+x install_geographiclib_datasets.sh
+sudo ./install_geographiclib_datasets.sh
+
 wstool init ~/sky_ws/src
 
 rosinstall_generator --upstream mavros | tee /tmp/mavros.rosinstall
@@ -101,11 +114,6 @@ echo "source ~/sky_ws/devel/setup.bash" >> ~/.bashrc
 update global variables:
 ```
 source ~/.bashrc
-```
-
-install geographiclib dependancy:
-```
-sudo ~/sky_ws/src/mavros/mavros/scripts/install_geographiclib_datasets.sh
 ```
 
 Run the following command to tell Gazebo where to look for models:
