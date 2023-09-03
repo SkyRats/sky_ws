@@ -91,6 +91,7 @@ Install `mavros` and `mavlink` from source:
 ```
 cd ~/sky_ws
 
+sudo apt-get install ros-noetic-mavros ros-noetic-mavros-extras
 wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh
 chmod a+x install_geographiclib_datasets.sh
 sudo ./install_geographiclib_datasets.sh
