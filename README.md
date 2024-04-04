@@ -180,6 +180,21 @@ This session is for people who are not running Ubuntu 20.04 as their operation s
 ## Install docker
 Follow the installation guide from docker documentation in respect to your operating system: [docker docs](https://docs.docker.com/engine/install/)
 
+## Login into to docker ghcr.io
+After downloading docker you will need to login. For this, you have to generate a classic token, so go to settings > developer settings > personal access tokens > Tokens (classic) and generate a token with write and delete scopes.
+
+Next copy the token that appear in the screen and run the following command:
+```zsh
+sudo docker login --username <your_user> --password <token>
+```
+
+## Downloaing a image
+For downloading a docker imagame, just follow the command bellow:
+
+```zsh
+sudo docker pull ghcr.io/skyrats/sky_ws:latest
+```
+
 ## Editing the run_image.bash
 Using the text editor of your choice, open run_image.bash and change the following line: 
 ``` zsh
