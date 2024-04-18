@@ -172,3 +172,57 @@ Just run the following commands to initialize the submodules
 ```
 git submodule update --init --recursive
 ```
+
+# Running sky_ws in a docker container
+
+This session is for people who are not running Ubuntu 20.04 as their operation system. It is still **required** to clone the sky_ws repository. 
+ 
+## Install docker
+Follow the installation guide from docker documentation in respect to your operating system: [docker docs](https://docs.docker.com/engine/install/)
+
+## Login into to docker ghcr.io
+After downloading docker you will need to login. For this, you have to generate a classic token, so go to settings > developer settings > personal access tokens > Tokens (classic) and generate a token with write and delete scopes.
+
+Next copy the token that appear in the screen and run the following command:
+```zsh
+sudo docker login --username <your_user> --password <token>
+```
+
+## Downloaing a image
+For downloading a docker imagame, just follow the command bellow:
+
+```zsh
+sudo docker pull ghcr.io/skyrats/sky_ws:latest
+```
+
+## Editing the run_image.bash
+Using the text editor of your choice, open run_image.bash and change the following line: 
+``` zsh
+--volume = "<absolute/path/to/sky_ws>:/home/sky/sky_ws"
+```
+
+## Creating the container
+Go to sky_ws directory, and just run the following command:
+``` zsh
+./run_image.bash
+```
+
+This may take a while if the sky_ws image is not installed. After complete, you will be prompt with a bash terminal inside the container.
+
+## Executing a existing a container
+You do not need to create a different container every time you want to run the sky_ws. After creating the container, you can enter it by using the following code:
+``` zsh
+./exec_image.bash
+```
+
+## Hints
+ - just typing **Qground** will open the QgroundControl.AppImage
+ - same password of sky computers
+
+## Suggestions 
+ - Install tmux: ``` sudo apt install tmux ```. Usefull if needed lots of terminal windowns
+
+
+
+
+
