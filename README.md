@@ -144,7 +144,7 @@ To test the simulation, you need at least two terminal windows:
 ```console
 sim_vehicle.py -v ArduCopter -f gazebo-iris --console
 ```
-Caso o path não esteja configurado corretamente, pode ser necessário utilizar:
+If the command is not found and the path can't be corrected, might need to run the next command before running SITL:
 ```console
 cd ~/sky_ws/src/sky_base/ardupilot/Tools/autotest
 ```
