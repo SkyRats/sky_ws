@@ -144,7 +144,7 @@ To test the simulation, you need at least two terminal windows:
 ```console
 sim_vehicle.py -v ArduCopter -f gazebo-iris --console
 ```
-If the command is not found and the path can't be corrected, might need to run the next command before running SITL:
+If the command is not found and the path can't be corrected, you might need to run the following command before running SITL:
 ```console
 cd ~/sky_ws/src/sky_base/ardupilot/Tools/autotest
 ```
@@ -192,7 +192,7 @@ Next copy the token that appear in the screen and run the following command:
 sudo docker login --username <your_user> --password <token>
 ```
 
-## Downloaing a image
+## Downloading a image
 For downloading a docker imagame, just follow the command bellow:
 
 ```zsh
