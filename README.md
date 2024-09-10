@@ -104,6 +104,7 @@ wstool merge -t src /tmp/mavros.rosinstall
 wstool update -t src
 rosdep install --from-paths src --ignore-src --rosdistro `echo $ROS_DISTRO` -y
 sudo apt install ros-noetic-angles
+sudo apt install ros-noetic-control-toolbox
 
 catkin build
 ```
