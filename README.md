@@ -192,7 +192,7 @@ After downloading docker you will need to login. For this, you have to generate 
 
 Next copy the token that appear in the screen and run the following command:
 ```zsh
-sudo docker login --username <your_user> --password <token>
+sudo docker login --username <your_user> --password <token> gchr.io
 ```
 
 ## Downloading a image
