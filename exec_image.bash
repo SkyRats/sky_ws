@@ -1,6 +1,6 @@
 xhost +
 
-sudo docker start sky_ws bash
+sudo docker start sky_ws
 
 sudo docker exec -it \
     --env="DISPLAY=$DISPLAY" \
